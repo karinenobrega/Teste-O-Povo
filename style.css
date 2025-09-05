@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap);
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
 
 :root {
 
@@ -15,6 +15,7 @@
 
 }
 
+/* GERAIS: */
 * {
     margin: 0;
     padding: 0;
@@ -25,39 +26,22 @@ body {
     color: var(--cor-fonte);
 }
 
-
-#movies-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px; /* Espaço entre os filmes */
+/*BACKGROUND: */
+.azul-background {
+    background-color: var(--azul-102c57);
 }
 
-.movie-card {
-    width: 200px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    overflow: hidden; /* Garante que a imagem não saia do card */
-    text-align: center;
+.bege-claro-background {
+    background-color: var(--bege-claro-f8f0e5);
 }
 
-.movie-card img {
-    width: 100%;
-    height: auto;
+.bege-escuro-background {
+    background-color: var(--bege-escuro-dac0a3);
 }
 
-.movie-card h3 {
-    font-size: 16px;
-    padding: 10px;
-    margin: 0;
-}
+/*BARRA NAVEGAÇÃO: */
 
-
-
-
-
-.menu-principal {
+.menu-bar {
     background-color: var(--azul-102c57);
     color: white;
     width: 100%;
@@ -91,16 +75,37 @@ body {
     text-decoration: underline;  /* Efeito sublinhado ao passar o mouse */
 }
 
+/*TEXTOS: */
+h1 {
+    font-size: 48px;
+    color: var(--azul-102c573);
+    letter-spacing: 0;
+}
+h2 {
+    font-size: 48px;
+    color: var(--bege-escuro-dac0a3);
+    letter-spacing: 0;
+}
+h3 {
+    font-family: "League Spartan";
+    color: var(--azul-102c57);
+    font-size: 15px;
+    font-weight: bold;
+}
+p {
+
+}
+
+
+/*FILME: */
 .filme {
-    background-color: var(--bege-claro-f8f0e5);
     display: flex;
     flex-direction: row;
     height: 696px;
     align-items: center;
-    padding-left: 20px;
 }
 .capa {
-    height: 600px;
+    height: auto;
     width: 400px;
 }
 .imagemCapa {
@@ -111,6 +116,12 @@ body {
 }
 .informacoes {
     background-color: #ffffff;
-    height: 400px;
-    width: 200px;
+    flex-direction: row;
+    height: 510px;
+}
+.titulo-container {
+    display:flex;
+    align-items: baseline;
+    gap: 12px;
+    height: 67px;
 }
