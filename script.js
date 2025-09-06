@@ -1,4 +1,4 @@
-let imdbMovieId = 'tt1517268';
+let imdbMovieId = 'tt0816692';
 
 const url = `https://api.themoviedb.org/3/find/${imdbMovieId}?external_source=imdb_id`;
 const options = {
@@ -310,3 +310,61 @@ fetch(url, options)
     
   })
   .catch(err => console.error("Ocorreu um erro:", err));
+
+
+  // ==========================================================
+// FUNCIONALIDADE DO CARROSSEL DE ELENCO (ROLAGEM E ARRASTAR)
+// ==========================================================
+
+// Espera todo o conteúdo da página carregar antes de rodar o script
+document.addEventListener("DOMContentLoaded", function() {
+    
+    // Encontra o trilho do carrossel no seu HTML
+    const slider = document.getElementById('carousel-track');
+    
+    // Só executa o código se o elemento do carrossel realmente existir na página
+    if (slider) { 
+        
+        // --- Funcionalidade 1: Rolar com a roda do mouse ---
+        slider.addEventListener('wheel', (e) => {
+            // Impede a rolagem vertical padrão da página, para não descer a tela sem querer
+            e.preventDefault();
+            // Adiciona o movimento vertical da roda do mouse à rolagem horizontal do slider
+            slider.scrollLeft += e.deltaY;
+        });
+
+        // --- Funcionalidade 2: Clicar e arrastar ---
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        // Quando o usuário clica com o mouse
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            slider.classList.add('active'); // Adiciona uma classe para mudar o cursor (CSS)
+            startX = e.pageX - slider.offsetLeft; // Pega a posição inicial do clique
+            scrollLeft = slider.scrollLeft; // Guarda a posição inicial da rolagem
+        });
+
+        // Quando o mouse sai da área do carrossel
+        slider.addEventListener('mouseleave', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
+
+        // Quando o usuário solta o clique do mouse
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
+
+        // Quando o usuário move o mouse
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDown) return; // Para a função se o mouse não estiver pressionado
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2; // Calcula a distância do arrastar (o '* 2' acelera)
+            slider.scrollLeft = scrollLeft - walk; // Move o scroll
+        });
+    }
+});
