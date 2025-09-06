@@ -292,13 +292,12 @@ h5 {
 
 
 
-/* A "Janela" - O container que esconde o excesso */
+
 .carousel-container {
     position: relative;
-    overflow: hidden; /* <-- ESCONDE O EXCEDENTE */
+    overflow: hidden;
 }
 
-/* O "Trilho" - A faixa horizontal que rola */
 .carousel-track {
     display: flex; /* Alinha os cards lado a lado */
     gap: 20px; /* <-- ESPAÇO DE 20PX ENTRE OS CARDS */
@@ -321,10 +320,8 @@ h5 {
        190px da imagem + 20px de padding (10 de cada lado) = 210px */
     flex: 0 0 210px;
     
-    background-color: white;
     border-radius: 8px;
     padding: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     text-align: center;
 }
 
