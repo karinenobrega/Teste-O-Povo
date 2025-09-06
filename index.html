@@ -2,12 +2,12 @@
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="wight=device-width, inicial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css" type="text/css">
 
-        <title>TESTE</title>
+        <title>PlayCube</title>
     </head>
     <body>
         <div class="azul-background">
@@ -23,7 +23,7 @@
         </div>
         <div class="bege-claro-background"><!--POSTER DO FILME-->
             <section class="filme container-sm row-cols-2">
-                <div class="capa col-md-4"><img id="poster" class="imagemCapa" src=" " alt="Astronauta solitário em pé em uma paisagem montanhosa e árida sob um céu nublado, com a palavra 'INTERSTELLAR' flutuando acima.">
+                <div class="capa col-md-4"><img id="poster" class="imagemCapa" src=" " alt=" ">
                 </div>    
                 <div class="informacoes col-md-8"><!--CAMPO DE INFORMAÇÕES GERAIS DO FILME-->
                     <div class="titulo-container">
@@ -79,71 +79,7 @@
                 </div>
 
                 <div class="carousel-container">
-                    <button class="carousel-button prev">&lt;</button>
-                    <div class="carousel-track">
-
-                        <div class="carousel-card">
-                            <img src="https://placehold.co/190" alt="Foto do Ator">
-                            <h4>Primeiro Texto</h4>
-                            <p>Segundo Texto</p>
-                        </div>
-
-                        <div class="carousel-card">
-                            <img src="https://placehold.co/190" alt="Foto do Ator">
-                            <h4>Primeiro Texto</h4>
-                            <p>Segundo Texto</p>
-                        </div>
-
-                        <div class="carousel-card">
-                            <img src="https://placehold.co/190" alt="Foto do Ator">
-                            <h4>Primeiro Texto</h4>
-                            <p>Segundo Texto</p>
-                        </div>
-
-                        <div class="carousel-card">
-                            <img src="https://placehold.co/190" alt="Foto do Ator">
-                            <h4>Primeiro Texto</h4>
-                            <p>Segundo Texto</p>
-                        </div>
-
-                        <div class="carousel-card">
-                            <img src="https://placehold.co/190" alt="Foto do Ator">
-                            <h4>Primeiro Texto</h4>
-                            <p>Segundo Texto</p>
-                        </div>
-
-                        <div class="carousel-card">
-                            <img src="https://placehold.co/190" alt="Foto do Ator">
-                            <h4>Primeiro Texto</h4>
-                            <p>Segundo Texto</p>
-                        </div>
-
-                        <div class="carousel-card">
-                            <img src="https://placehold.co/190" alt="Foto do Ator">
-                            <h4>Primeiro Texto</h4>
-                            <p>Segundo Texto</p>
-                        </div>
-
-                        <div class="carousel-card">
-                            <img src="https://placehold.co/190" alt="Foto do Ator">
-                            <h4>Primeiro Texto</h4>
-                            <p>Segundo Texto</p>
-                        </div>
-
-                        <div class="carousel-card">
-                            <img src="https://placehold.co/190" alt="Foto do Ator">
-                            <h4>Primeiro Texto</h4>
-                            <p>Segundo Texto</p>
-                        </div>
-
-                        <div class="carousel-card">
-                            <img src="https://placehold.co/190" alt="Foto do Ator">
-                            <h4>Primeiro Texto</h4>
-                            <p>Segundo Texto</p>
-                        </div>
-
-                    </div>
-                    <button class="carousel-button next">&gt;</button>
+                    <div id="carousel-track" class="carousel-track"></div>
                 </div>
             </section>
         </div>
@@ -167,11 +103,7 @@
                         <h5>Vídeos<span class="count-text"> (<span id="video-count"></span>)</span></h5>
                         <button id="btn-videos" type="button" class="btn btn-vermais">Ver mais</button>
                     </div>
-                    <div class="video-container">
-                        <div class="video-box"></div>
-                        <div class="video-box"></div>
-                        <div class="video-box"></div>
-                    </div>
+                    <div id="video-container" class="video-container"></div>
                 </div>
 
                 <div class="subtitulos d-flex flex-column">
@@ -179,12 +111,7 @@
                         <h5>Posteres<span class="count-text"> (<span id="posters-count"></span>)</span></h5>
                         <button id="btn-posters" type="button" class="btn btn-vermais">Ver mais</button>
                     </div>
-                    <div class="poster-container">
-                        <div class="poster-box"></div>
-                        <div class="poster-box"></div>
-                        <div class="poster-box"></div>
-                        <div class="poster-box"></div>
-                    </div>
+                    <div id="poster-container" class="poster-container"></div>
                 </div>
 
                 <div class="subtitulos d-flex flex-column">
@@ -192,12 +119,57 @@
                         <h5>Imagens de fundo<span class="count-text"> (<span id="wallpaper-count"></span>)</span></h5>
                         <button id="btn-imagens-fundo" type="button" class="btn btn-vermais">Ver mais</button>
                     </div>
-                    <div class="wallpapers-container">
-                        <div class="wallpaper-box"></div>
-                        <div class="wallpaper-box"></div>
-                    </div>
+                    <div id="wallpapers-container" class="wallpapers-container"></div>
                 </div>
             </section>
+        </div>
+
+        <div class="azul-background">
+            <section id="recomendacoes" class="container-sm">
+                <div class="subtitulo-rec">
+                    <h4>Recomendações</h4>
+                </div>
+
+                <div id="rec-container" class="rec-container"></div>
+            </section>
+        </div>
+
+        <div class="bege-claro-background footer-wrapper">
+
+            <footer id="rodape" class="container-sm">
+
+                <div class="row">
+
+                    <div class="col-md-3">
+                        <img src="imgs/logo-escura.png" alt="Logo" class="img-fluid">
+                    </div>
+
+                    <div class="col-md-3">
+                        <ul>
+                            <li><a href="#">Sobre</a></li>
+                            <li><a href="#">Contato</a></li>
+                            <li><a href="#">Suporte</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-3">
+                        <ul>
+                            <li><a href="#">Adicione um Filme</a></li>
+                            <li><a href="#">Adicione uma Série</a></li>
+                            <li><a href="#">Discussões</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-3">
+                        <ul>
+                            <li><a href="#">Termos de Uso</a></li>
+                            <li><a href="#">Política de Privacidade</a></li>
+                            <li><a href="#">Diretrizes</a></li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </footer>
         </div>
 
         <script src="script.js"></script>

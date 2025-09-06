@@ -11,12 +11,14 @@
 --cor-fonte: #333333;
 --bold-font: 700;
 --regular-font: 400;
---regular-font-size: 1.5rem;
+--regular-font-size: 22px;
 
 }
 
 .container-sm {
     max-width: 1240px;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 /* GERAIS: */
@@ -105,6 +107,11 @@ h5 {
     font-size: 2.25rem;
     color: var(--azul-102c57);
 }
+p {
+    font-size: 22px;
+    letter-spacing: 0;
+    line-height: 22px;
+}
 .count-text {
     font-weight: var(--regular-font);
     font-size: 2.25rem;
@@ -121,18 +128,24 @@ h5 {
     background-color: var(--bege-claro-f8f0e5);
 }
 .capa {
+    padding-left: 0;
     height: 600px;
-    width: 400px;
+    max-width: 400px;
+    overflow: hidden;
+    border-radius: 10px;
 }
 .imagemCapa {
-    width: 100%;
+    max-width: 400px;
     height: 100%;
     border-radius: 10px;
     box-shadow: 0px 0px 20px rgba(0,0,0,0.4);
+    object-fit: cover;
 }
 .informacoes {
     flex-direction: row;
-    height: 510px;
+    height: 600px;
+    align-items: baseline;
+    padding-left: 20px;
 }
 .titulo-container {
     display:flex;
@@ -147,7 +160,7 @@ h5 {
 /*ELENCO: */
 #elenco {
     padding-top: 2rem;
-    padding-bottom: 2rem;
+    height: 394px;
 }
 .subtitulos {
     display: flex;
@@ -164,6 +177,50 @@ h5 {
     background-color: var(--azul-102c57);
     font-size: 24px;
 }
+
+
+.carousel-container {
+    height: 264px;
+    position: relative;
+    overflow: hidden;
+}
+.carousel-card {
+    flex: 0 0 190px;
+    text-align: center;
+}
+.carousel-card img {
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 20px;
+}
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    /* Esconde a barra de rolagem */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.carousel-track::-webkit-scrollbar {
+    display: none;
+}
+.carousel-container .carousel-card h4 {
+    font-size: var(--regular-font-size);
+    font-weight: var(--bold-font);
+    color: var(--cor-fonte);
+    
+}
+.carousel-container .carousel-card p {
+    font-size: var(--regular-font-size);
+    font-weight: var(--regular-font);
+    color: var(--cor-fonte);
+}
+
+
 
 #resenhas, #midia {
     padding-top: 73px;
@@ -190,12 +247,14 @@ h5 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}   
+}
+.review-card .text-wrapper {
+    flex-grow: 1; /* Faz este wrapper ocupar o espaço disponível */
+    overflow: hidden; /* ESSENCIAL: Esconde qualquer coisa que o parágrafo interno vazar */
+}
 .review-card .main-text {
     text-align: justify;
-    margin-bottom: 30px;
-    flex-grow: 1;
-    max-height: 238px;
+    
     overflow: hidden;
     text-overflow: ellipsis;
 
@@ -211,6 +270,7 @@ h5 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: var(--regular-font-size);
 }
 
 /*MIDIA: */
@@ -219,7 +279,7 @@ h5 {
     flex-direction: row;
     gap: 20px;
 }
-.video-box {
+.video-card {
     width: 400px;
     height: 225px;
     margin-top: 10px;
@@ -229,27 +289,8 @@ h5 {
     position: relative;
     cursor: pointer;
     background-color: #000;
-}
-.play-button-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 40px;
-    color: white;
-    background-color: red;
-    width: 99.98px;
-    height: 70px;
-    border-radius: 10px;
-    opacity: 0.8;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    pointer-events: none; 
-    transition: background-color 0.2s ease;
-}
-.video-box:hover .play-button-overlay {
-    background-color: rgba(255, 0, 0, 0.8);
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+    object-fit: cover;
 }
 .poster-container {
     display: flex;
@@ -262,7 +303,11 @@ h5 {
     margin-top: 10px;
     margin-bottom: 43px;
     border-radius: 10px;
-    background-color: white;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 .wallpapers-container {
     display: flex;
@@ -275,111 +320,76 @@ h5 {
     margin-top: 10px;
     margin-bottom: 43px;
     border-radius: 10px;
-    background-color: white;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.carousel-container {
-    position: relative;
+/*RECOMENDAÇÕES: */
+#recomendacoes {
+    padding-top: 2rem;
+    height: 506px;
+}
+.subtitulo-rec h4 {
+    display: flex;
+    color: var(--bege-claro-f8f0e5);
+}
+.rec-container {
+    height: 376px;
+    margin-left: 0;
     overflow: hidden;
+    display: flex;
+    gap: 20px;
 }
-
-.carousel-track {
-    display: flex; /* Alinha os cards lado a lado */
-    gap: 20px; /* <-- ESPAÇO DE 20PX ENTRE OS CARDS */
-    padding: 1rem 0;
-    
-    overflow-x: auto; /* Habilita a rolagem */
-    scroll-behavior: smooth; /* Animação suave de rolagem */
-
-    /* Esconde a barra de rolagem */
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-.carousel-track::-webkit-scrollbar {
-    display: none;
-}
-
-/* Cada card individual */
-.carousel-card {
-    /* Define uma largura fixa para o card.
-       190px da imagem + 20px de padding (10 de cada lado) = 210px */
-    flex: 0 0 210px;
-    
-    border-radius: 8px;
-    padding: 10px;
+.rec-card {
+    flex: 0 0 190px;
     text-align: center;
 }
-
-/* HIERARQUIA DENTRO DO CARD */
-
-/* 1. Caixa de imagem redonda de 190px */
-.carousel-card img {
-    width: 190px;
-    height: 190px;
-    border-radius: 50%; /* <-- Deixa a imagem redonda */
-    object-fit: cover; /* Garante que a imagem não fique distorcida */
-    display: block;
-    
-    /* 2. Espaçamento para o próximo item de 20px */
-    margin-bottom: 20px;
+.rec-card img {
+    padding-left: 0;
+    width: 190px;;
+    height: 285px;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
-
-/* 3. Primeiro texto */
-.carousel-card h4 {
-    font-weight: 700;
-    font-size: 1.1rem;
-    color: #333;
+.rec-card h4 {
+    color: var(--bege-claro-f8f0e5);
+    font-weight: var(--bold-font);
+    font-size: 22px;
+    padding-top: 10px;
+}
+.rec-card p {
+    color: var(--bege-claro-f8f0e5);
+    font-size: 22px;
+}
+/*RODAPÉ: */
+#rodape {
+    padding-top: 50px;
+}
+.footer-wrapper {
+    width: 100%;
+    height: 265px;
+}
+#rodape.container-sm {
+    width: 100%;
+}
+#rodape ul {
+    list-style: none;
+    padding: 0;
     margin: 0;
-    
-    /* 4. Espaçamento para o próximo item de 10px */
-    margin-bottom: 10px;
+    text-align: left;
+    padding-top: 20px;
 }
-
-/* 5. Segundo texto */
-.carousel-card p {
-    font-size: 0.9rem;
-    color: #6c757d;
-    margin: 0;
+#rodape li {
+    margin-bottom: 1rem;
 }
-
-/* Botões de navegação do carrossel */
-.carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: white;
-    color: #333;
-    border: 1px solid #ddd;
-    border-radius: 50%;
-    width: 45px;
-    height: 45px;
-    font-size: 24px;
-    cursor: pointer;
-    z-index: 10;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+#rodape a {
+    text-decoration: none;
+    color: var(--azul-102c57);
+    font-size: var(--regular-font-size);
 }
-
-.carousel-button:hover {
-    background-color: #f8f9fa;
-}
-
-.carousel-button.prev { left: -20px; }
-.carousel-button.next { right: -20px; }
