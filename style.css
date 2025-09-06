@@ -11,8 +11,12 @@
 --cor-fonte: #333333;
 --bold-font: 700;
 --regular-font: 400;
---regular-font-size: 24px;
+--regular-font-size: 1.5rem;
 
+}
+
+.container-sm {
+    max-width: 1240px;
 }
 
 /* GERAIS: */
@@ -21,7 +25,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-body {
+html, body {
     font-family: "League Spartan", sans-serif;
     color: var(--cor-fonte);
 }
@@ -35,8 +39,8 @@ body {
     background-color: var(--bege-claro-f8f0e5);
 }
 
-.bege-escuro-background {
-    background-color: var(--bege-escuro-dac0a3);
+.bege-medio-background {
+    background-color: var(--bege-medio-eadbc8);
 }
 
 /*BARRA NAVEGAÇÃO: */
@@ -67,7 +71,7 @@ body {
     color: var(--bege-claro-f8f0e5);
     display: block;
     padding: 15px 20px;
-    font-size: 15px;
+    font-size: var(--regular-font-size);
     font-weight: bold;
     text-align: center;
 }
@@ -77,23 +81,34 @@ body {
 
 /*TEXTOS: */
 h1 {
-    font-size: 48px;
-    color: var(--azul-102c573);
-    letter-spacing: 0;
+    font-weight: var(--bold-font);
+    font-size: 3rem;
+    color: var(--azul-102c57);
 }
 h2 {
-    font-size: 48px;
+    font-weight: var(--regular-font);
+    font-size: 3rem;
     color: var(--bege-escuro-dac0a3);
-    letter-spacing: 0;
 }
 h3 {
-    font-family: "League Spartan";
+    font-weight: var(--bold-font);
+    font-size: var(--regular-font-size);
     color: var(--azul-102c57);
-    font-size: 15px;
-    font-weight: bold;
 }
-p {
-
+h4 {
+    font-weight: var(--bold-font);
+    font-size: 2.25rem;
+    color: var(--azul-102c57);
+}
+h5 {
+    font-weight: var(--regular-font);
+    font-size: 2.25rem;
+    color: var(--azul-102c57);
+}
+.count-text {
+    font-weight: var(--regular-font);
+    font-size: 2.25rem;
+    color: var(--bege-escuro-dac0a3);
 }
 
 
@@ -103,19 +118,19 @@ p {
     flex-direction: row;
     height: 696px;
     align-items: center;
+    background-color: var(--bege-claro-f8f0e5);
 }
 .capa {
-    height: auto;
+    height: 600px;
     width: 400px;
 }
 .imagemCapa {
     width: 100%;
-    height: auto;
+    height: 100%;
     border-radius: 10px;
     box-shadow: 0px 0px 20px rgba(0,0,0,0.4);
 }
 .informacoes {
-    background-color: #ffffff;
     flex-direction: row;
     height: 510px;
 }
@@ -125,3 +140,249 @@ p {
     gap: 12px;
     height: 67px;
 }
+.subInformacoes {
+    display: grid;
+}
+
+/*ELENCO: */
+#elenco {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.subtitulos {
+    display: flex;
+}
+.btn-vermais {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 125px;
+    height: 40px;
+    margin-left: 20px;
+    border-radius: 40px;
+    color: var(--bege-claro-f8f0e5);
+    background-color: var(--azul-102c57);
+    font-size: 24px;
+}
+
+#resenhas, #midia {
+    padding-top: 73px;
+}
+#videos {
+    padding-top: 33px;
+}
+#posteres, #imagensdefundo {
+    padding-top: 43px;
+}
+
+/*RESENHAS: */
+.reviews-container {
+    display: flex;
+    gap: 20px;
+}
+.review-card {
+    width: 610px;
+    height: 392px;
+    border-radius: 10px;
+    background-color: var(--bege-medio-eadbc8);
+    margin-top: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}   
+.review-card .main-text {
+    text-align: justify;
+    margin-bottom: 30px;
+    flex-grow: 1;
+    max-height: 238px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 10; /* DEFINE O NÚMERO DE LINHAS A SEREM EXIBIDAS */
+    -webkit-box-orient: vertical;
+}
+.review-card .highlight-word {
+    font-weight: var(--bold-font);
+    color: var(--azul-102c57)
+}
+.review-card .footer-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*MIDIA: */
+.video-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.video-box {
+    width: 400px;
+    height: 225px;
+    margin-top: 10px;
+    margin-bottom: 43px;
+    border-radius: 10px;
+    
+    position: relative;
+    cursor: pointer;
+    background-color: #000;
+}
+.play-button-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    color: white;
+    background-color: red;
+    width: 99.98px;
+    height: 70px;
+    border-radius: 10px;
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none; 
+    transition: background-color 0.2s ease;
+}
+.video-box:hover .play-button-overlay {
+    background-color: rgba(255, 0, 0, 0.8);
+}
+.poster-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.poster-box {
+    width: 295px;
+    height: 440px;
+    margin-top: 10px;
+    margin-bottom: 43px;
+    border-radius: 10px;
+    background-color: white;
+}
+.wallpapers-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.wallpaper-box {
+    width: 610px;
+    height: 343px;
+    margin-top: 10px;
+    margin-bottom: 43px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* A "Janela" - O container que esconde o excesso */
+.carousel-container {
+    position: relative;
+    overflow: hidden; /* <-- ESCONDE O EXCEDENTE */
+}
+
+/* O "Trilho" - A faixa horizontal que rola */
+.carousel-track {
+    display: flex; /* Alinha os cards lado a lado */
+    gap: 20px; /* <-- ESPAÇO DE 20PX ENTRE OS CARDS */
+    padding: 1rem 0;
+    
+    overflow-x: auto; /* Habilita a rolagem */
+    scroll-behavior: smooth; /* Animação suave de rolagem */
+
+    /* Esconde a barra de rolagem */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.carousel-track::-webkit-scrollbar {
+    display: none;
+}
+
+/* Cada card individual */
+.carousel-card {
+    /* Define uma largura fixa para o card.
+       190px da imagem + 20px de padding (10 de cada lado) = 210px */
+    flex: 0 0 210px;
+    
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* HIERARQUIA DENTRO DO CARD */
+
+/* 1. Caixa de imagem redonda de 190px */
+.carousel-card img {
+    width: 190px;
+    height: 190px;
+    border-radius: 50%; /* <-- Deixa a imagem redonda */
+    object-fit: cover; /* Garante que a imagem não fique distorcida */
+    display: block;
+    
+    /* 2. Espaçamento para o próximo item de 20px */
+    margin-bottom: 20px;
+}
+
+/* 3. Primeiro texto */
+.carousel-card h4 {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #333;
+    margin: 0;
+    
+    /* 4. Espaçamento para o próximo item de 10px */
+    margin-bottom: 10px;
+}
+
+/* 5. Segundo texto */
+.carousel-card p {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin: 0;
+}
+
+/* Botões de navegação do carrossel */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-button:hover {
+    background-color: #f8f9fa;
+}
+
+.carousel-button.prev { left: -20px; }
+.carousel-button.next { right: -20px; }

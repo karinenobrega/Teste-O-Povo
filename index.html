@@ -3,44 +3,202 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="wight=device-width, inicial-scale=1.0">
-        <link rel="stylesheet" href="style.css" type="text/css">
-
+        
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css" type="text/css">
 
         <title>TESTE</title>
     </head>
     <body>
-        <nav class="menu-bar azul-background">
-             <div class="container-sm">
-                <h1>LOGO DA MARCA</h1>
+        <div class="azul-background">
+             <nav class="menu-bar navbar navbar-expand-lg container-sm">
+                <img src="imgs/logo-clara.png">
                 <div class="menu-navegacao">
                     <ul>
                         <li><a href="#">Filmes</a></li>
                         <li><a href="#">Séries</a></li>
                     </ul>
                 </div>
-            </div>
-        </nav>
-        <section class="filme container-sm bege-claro-background"><!--POSTER DO FILME-->
+            </nav>
+        </div>
+        <div class="bege-claro-background"><!--POSTER DO FILME-->
+            <section class="filme container-sm row-cols-2">
                 <div class="capa col-md-4"><img id="poster" class="imagemCapa" src=" " alt="Astronauta solitário em pé em uma paisagem montanhosa e árida sob um céu nublado, com a palavra 'INTERSTELLAR' flutuando acima.">
                 </div>    
                 <div class="informacoes col-md-8"><!--CAMPO DE INFORMAÇÕES GERAIS DO FILME-->
                     <div class="titulo-container">
-                        <h1 id="title" class="font-weight-bold"></h1>
-                        <h2 id="year" class="font-weight-normal">(2014)</h2>
+                        <h1 id="title"></h1>
+                        <h2>(<span id="year-released"></span>)</h2>
                     </div>
-                    <div class="titulo-container">
-                        <h1 class="font-weight-bold">Barbie</h1>
-                        <h2 id="year">(2024)</h2>
+                    <div>
+                        <h3>Gênero:</h3>
+                        <p id="genres"></p>
+                    </div>
+                    <div>
+                        <h3>Sinopse:</h3>
+                        <p id="overview" class="text-justify"></p>
+                    </div>
+                    <div class="subInformacoes">
+                        <div class="row row-cols-2">
+                            <div class="col">
+                                <h3>Dirigido por:</h3>
+                                <p id="director"></p>
+                            </div>
+                            <div class="col">
+                                <h3>Escrito por:</h3>
+                                <p id="writer"></p>
+                            </div>
+                            <div class="col">
+                                <h3>Situação:</h3>
+                                <p id="status"></p>
+                            </div>
+                            <div class="col">
+                                <h3>Idioma original:</h3>
+                                <p id="language"></p>
+                            </div>
+                            <div class="col">
+                                <h3>Orçamento:</h3>
+                                <p id="budget"></p>
+                            </div>
+                            <div class="col">
+                                <h3>Receita:</h3>
+                                <p id="revenue"></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-        </section>
-        <section id="elenco bege-escuro-background">
-        </section>
-        <section id="resenhas">
-        </section>
-        <section id="midia">
-        </section>
+            </section>
+        </div>
+        
+
+
+        <div class="bege-medio-background">
+            <section id="elenco" class="container-sm">
+                <div class="subtitulos">
+                    <h4>Elenco</h4><button id="btn-elenco" type="button" class="btn btn-vermais">Ver mais</button>
+                </div>
+
+                <div class="carousel-container">
+                    <button class="carousel-button prev">&lt;</button>
+                    <div class="carousel-track">
+
+                        <div class="carousel-card">
+                            <img src="https://via.placeholder.com/190" alt="Foto do Ator">
+                            <h4>Primeiro Texto</h4>
+                            <p>Segundo Texto</p>
+                        </div>
+
+                        <div class="carousel-card">
+                            <img src="https://via.placeholder.com/190" alt="Foto do Ator">
+                            <h4>Primeiro Texto</h4>
+                            <p>Segundo Texto</p>
+                        </div>
+
+                        <div class="carousel-card">
+                            <img src="https://via.placeholder.com/190" alt="Foto do Ator">
+                            <h4>Primeiro Texto</h4>
+                            <p>Segundo Texto</p>
+                        </div>
+
+                        <div class="carousel-card">
+                            <img src="https://via.placeholder.com/190" alt="Foto do Ator">
+                            <h4>Primeiro Texto</h4>
+                            <p>Segundo Texto</p>
+                        </div>
+
+                        <div class="carousel-card">
+                            <img src="https://via.placeholder.com/190" alt="Foto do Ator">
+                            <h4>Primeiro Texto</h4>
+                            <p>Segundo Texto</p>
+                        </div>
+
+                        <div class="carousel-card">
+                            <img src="https://via.placeholder.com/190" alt="Foto do Ator">
+                            <h4>Primeiro Texto</h4>
+                            <p>Segundo Texto</p>
+                        </div>
+
+                        <div class="carousel-card">
+                            <img src="https://via.placeholder.com/190" alt="Foto do Ator">
+                            <h4>Primeiro Texto</h4>
+                            <p>Segundo Texto</p>
+                        </div>
+
+                        <div class="carousel-card">
+                            <img src="https://via.placeholder.com/190" alt="Foto do Ator">
+                            <h4>Primeiro Texto</h4>
+                            <p>Segundo Texto</p>
+                        </div>
+
+                        <div class="carousel-card">
+                            <img src="https://via.placeholder.com/190" alt="Foto do Ator">
+                            <h4>Primeiro Texto</h4>
+                            <p>Segundo Texto</p>
+                        </div>
+
+                        <div class="carousel-card">
+                            <img src="https://via.placeholder.com/190" alt="Foto do Ator">
+                            <h4>Primeiro Texto</h4>
+                            <p>Segundo Texto</p>
+                        </div>
+
+                    </div>
+                    <button class="carousel-button next">&gt;</button>
+                </div>
+            </section>
+        </div>
+            
+        <div class="bege-claro-background">
+            <section id="resenhas" class="container-sm">
+                <div class="subtitulos">
+                    <h4>Resenhas</h4><button id="btn-resenhas" type="button" class="btn btn-vermais">Ver mais</button>
+                </div>
+
+                <div id="reviews-container" class="reviews-container"></div>
+            </section>
+
+            <section class="container-sm">
+                <div id="midia" class="subtitulos">
+                    <h4>Mídia</h4>
+                </div>
+
+                <div class="subtitulos d-flex flex-column">
+                    <div class="d-flex flex-row">
+                        <h5>Vídeos<span class="count-text"> (<span id="video-count"></span>)</span></h5>
+                        <button id="btn-videos" type="button" class="btn btn-vermais">Ver mais</button>
+                    </div>
+                    <div class="video-container">
+                        <div class="video-box"></div>
+                        <div class="video-box"></div>
+                        <div class="video-box"></div>
+                    </div>
+                </div>
+
+                <div class="subtitulos d-flex flex-column">
+                    <div class="d-flex flex-row">
+                        <h5>Posteres<span class="count-text"> (<span id="posters-count"></span>)</span></h5>
+                        <button id="btn-posters" type="button" class="btn btn-vermais">Ver mais</button>
+                    </div>
+                    <div class="poster-container">
+                        <div class="poster-box"></div>
+                        <div class="poster-box"></div>
+                        <div class="poster-box"></div>
+                        <div class="poster-box"></div>
+                    </div>
+                </div>
+
+                <div class="subtitulos d-flex flex-column">
+                    <div class="d-flex flex-row">
+                        <h5>Imagens de fundo<span class="count-text"> (<span id="wallpaper-count"></span>)</span></h5>
+                        <button id="btn-imagens-fundo" type="button" class="btn btn-vermais">Ver mais</button>
+                    </div>
+                    <div class="wallpapers-container">
+                        <div class="wallpaper-box"></div>
+                        <div class="wallpaper-box"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
 
         <script src="script.js"></script>
 
