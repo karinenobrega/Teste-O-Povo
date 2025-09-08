@@ -6,15 +6,18 @@
         
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css" type="text/css">
+        <link rel="stylesheet" href="responsivity.css" type="text/css">
 
         <title>PlayCube</title>
     </head>
     <body>
-        <div class="azul-background">
-             <nav class="menu-bar navbar navbar-expand-lg container px-0">
-                <img src="imgs/logo-clara.png">
+        <div id="navbar" class="azul-background">
+             <nav class="menu-bar navbar navbar-expand-lg container px-lg-0">
+                <a class="navbar-brand" href="#">
+                    <img src="imgs/logo-clara.png" alt="Logo PlayCube">
+                </a>
 
-                <button class="toggler">☰</button>
+                <button class="navbar-toggler toggler" type="button" data-toggle="collapse" data-target="#menu-navegacao">☰</button>
 
                 <div id="menu-navegacao" class="collapse navbar-collapse menu-navegacao">
                     <ul class="navbar-nav ml-auto">
@@ -25,7 +28,7 @@
             </nav>
         </div>
         <div class="bege-claro-background"><!--POSTER DO FILME-->
-            <section class="container px-0 py-5">
+            <section class="container px-lg-0 py-5">
                 <div class="row">
                     <div class="capa col-sm-12 col-md-12 col-lg-4"><img id="poster" class="imagemCapa" src=" " alt=" "></div>    
 
@@ -43,28 +46,28 @@
                             <p id="overview" class="text-justify"></p>
                         </div>
                         <div class="subInformacoes">
-                            <div class="row row-cols-2">
-                                <div class="col">
+                            <div class="row">
+                                <div class="col-12 col-sm-6">
                                     <h3>Dirigido por:</h3>
                                     <p id="director"></p>
                                 </div>
-                                <div class="col">
+                                <div class="col-12 col-sm-6">
                                     <h3>Escrito por:</h3>
                                     <p id="writer"></p>
                                 </div>
-                                <div class="col">
+                                <div class="col-12 col-sm-6">
                                     <h3>Situação:</h3>
                                     <p id="status"></p>
                                 </div>
-                                <div class="col">
+                                <div class="col-12 col-sm-6">
                                     <h3>Idioma original:</h3>
                                     <p id="language"></p>
                                 </div>
-                                <div class="col">
+                                <div class="col-12 col-sm-6">
                                     <h3>Orçamento:</h3>
                                     <p id="budget"></p>
                                 </div>
-                                <div class="col">
+                                <div class="col-12 col-sm-6">
                                     <h3>Receita:</h3>
                                     <p id="revenue"></p>
                                 </div>
@@ -76,7 +79,7 @@
         </div>
         
         <div class="bege-medio-background">
-            <section id="elenco" class="container px-0">
+            <section id="elenco" class="container px-lg-0">
                 <div class="subtitulos">
                     <h4>Elenco</h4><button id="btn-elenco" type="button" class="btn btn-vermais">Ver mais</button>
                 </div>
@@ -96,7 +99,7 @@
         </div>
             
         <div class="bege-claro-background">
-            <section id="resenhas" class="container px-0">
+            <section id="resenhas" class="container px-lg-0">
                 <div class="subtitulos">
                     <h4>Resenhas</h4><button id="btn-resenhas" type="button" class="btn btn-vermais">Ver mais</button>
                 </div>
@@ -104,7 +107,7 @@
                 <div id="reviews-container" class="row"></div>
             </section>
 
-            <section class="container px-0">
+            <section class="container px-lg-0">
                 <div id="midia" class="subtitulos">
                     <h4>Mídia</h4>
                 </div>
@@ -136,7 +139,7 @@
         </div>
 
         <div class="azul-background">
-            <section id="recomendacoes" class="container px-0">
+            <section id="recomendacoes" class="container px-lg-0">
                 <div class="subtitulo-rec">
                     <h4>Recomendações</h4>
                 </div>
@@ -147,7 +150,7 @@
 
         <div class="bege-claro-background footer-wrapper">
 
-            <footer id="rodape" class="container px-0">
+            <footer id="rodape" class="container px-lg-0">
 
                 <div class="row">
 

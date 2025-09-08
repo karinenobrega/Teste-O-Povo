@@ -33,6 +33,7 @@ html, body {
 /*BARRA NAVEGAÇÃO: */
 .menu-bar {
     height: 100px;
+    z-index: 1030;
 }
 .menu-navegacao a {
     color: var(--bege-claro-f8f0e5);
@@ -43,14 +44,20 @@ html, body {
     text-decoration: underline;
 }
 .toggler {
+    background-color: transparent;
     display: block;
-    background: none;
-    border: none;
+    /* background: none; */
+    outline: none;
+    box-shadow: none;
+    border:none;
     color: var(--bege-claro-f8f0e5);
     font-size: 25px;
     font-weight: var(--bold-font);
     cursor: pointer;
     padding: 0.5rem;
+}
+.toggler .navbar-toggler-icon {
+    display: none;
 }
 
 /*TEXTOS: */

@@ -1,0 +1,37 @@
+/*----------- MOBILE (ATÉ 376px) ------------*/
+@media (max-width: 376px) {
+
+}
+
+/*----------- TABLET (ATÉ 768px) ------------*/
+@media (max-width: 1024px) {
+    .navbar-collapse {
+        width:100%;
+        position: absolute;
+        top: 100%;
+        background-color: var(--azul-102c57);
+        left: 0;
+    }
+    .navbar-collapse .navbar-nav {
+        text-align: center;
+        background-color: var(--azul-102c57);
+    }
+    .navbar-collapse .nav-item {
+        padding: 0.5rem 0;
+    }
+
+    .capa {
+        display: flex;
+        justify-content: center;
+    }
+    .imagemCapa {
+        max-width: 400px;
+        max-height: 600px;
+    }
+    .informacoes {
+        padding-top: 30px;
+    }
+    .titulo-container {
+        justify-content: center;
+    }
+}
