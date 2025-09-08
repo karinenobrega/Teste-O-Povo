@@ -19,6 +19,9 @@
         font-size: 1.8rem;
     }
 
+    .video-card {
+       max-width: 320px;
+    }
     .video-card img {
         width: 320px;
     }
