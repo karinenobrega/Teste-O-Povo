@@ -179,16 +179,18 @@ fetch(url, options)
 
         reviewsLimitadas.forEach(review => {
             const reviewCard = document.createElement('div');
-            reviewCard.classList.add('review-card');
+            reviewCard.classList.add('col-xs-12', 'col-sm-12', 'col-md-12', 'col-lg-6');
 
             reviewCard.innerHTML = `
-                <div class="text-wrapper">
-                    <p id="review-content" class="main-text text-justify">${review.content}</p>
-                </div>
-                <div> <p>por <span id="review-author" class="highlight-word">${review.author}</span></p>
-                    <div class="footer-info">
-                        <span id="review-date" class="left-aligned-text">${new Date(review.updated_at).toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
-                        <span class="right-aligned-text">Nota: <span id="review-rate" class="highlight-word">${review.author_details.rating}</span>/10</span>
+                <div class='review-card'>
+                    <div class="text-wrapper">
+                        <p id="review-content" class="main-text text-justify">${review.content}</p>
+                    </div>
+                    <div> <p>por <span id="review-author" class="highlight-word">${review.author}</span></p>
+                        <div class="footer-info">
+                            <span id="review-date" class="left-aligned-text">${new Date(review.updated_at).toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
+                            <span class="right-aligned-text">Nota: <span id="review-rate" class="highlight-word">${review.author_details.rating}</span>/10</span>
+                        </div>
                     </div>
                 </div>
             `;
@@ -218,15 +220,15 @@ fetch(url, options)
 
                 videoCard.dataset.videoKey = video.key;
 
-                videoCard.innerHTML = `<img src="https://img.youtube.com/vi/${video.key}/mqdefault.jpg" alt="${video.name}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">`;
+                videoCard.innerHTML = `<img src="https://img.youtube.com/vi/${video.key}/mqdefault.jpg" alt="${video.name}" style="object-fit: cover; border-radius: 10px;">`;
 
                 videoCard.addEventListener('click', function() {
                     const key = this.dataset.videoKey;
                     // Ao clicar, substitui a miniatura pelo player do YouTube
                     this.innerHTML = `
-                        <iframe 
-                            width="100%" 
-                            height="100%" 
+                        <iframe  
+                            width=100%
+                            height=100%
                             src="https://www.youtube.com/embed/${key}?autoplay=1" 
                             frameborder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -256,13 +258,14 @@ fetch(url, options)
             const posterImageCard = document.createElement('div');
             posterImageCard.classList.add('poster-box');
 
-            const posterUrl = `https://image.tmdb.org/t/p/w500${posterImage.file_path}`;
-            posterImageCard.style.backgroundImage = `url(${posterUrl})`;
-
+            posterImageCard.innerHTML = `
+                <img src="https://image.tmdb.org/t/p/w500${posterImage.file_path}" alt="Poster do filme ${detailsData.title}">
+            `;
+            
             posterImagesContainer.appendChild(posterImageCard);
         });
     } else {
-        posterImagesContainer.innerHTML = '<p>Nenhum poster encontrado para este filme.</p>';
+        posterImagesContainer.innerHTML = '<p>Nenhuma recomendação encontrada com base neste filme.</p>';
     }
 
     //WALLPAPERS//
@@ -277,8 +280,9 @@ fetch(url, options)
             const wallpaperCard = document.createElement('div');
             wallpaperCard.classList.add('wallpaper-box');
 
-            const wallpaperUrl = `https://image.tmdb.org/t/p/w500${wallpaper.file_path}`;
-            wallpaperCard.style.backgroundImage = `url(${wallpaperUrl})`;
+            wallpaperCard.innerHTML = `
+                <img src="https://image.tmdb.org/t/p/w500${wallpaper.file_path}" alt="Poster do filme ${detailsData.title}">
+            `;
 
             wallpapersContainer.appendChild(wallpaperCard);
         });
@@ -290,7 +294,7 @@ fetch(url, options)
     recommendationsContainer.innerHTML = "";
 
     if (recommendationsData.results && recommendationsData.results.length > 0) {
-        const recLimitadas = recommendationsData.results.slice(0, 6);
+        const recLimitadas = recommendationsData.results.slice(0, 5);
 
         recLimitadas.forEach(rec => {
             const recCard = document.createElement('div');

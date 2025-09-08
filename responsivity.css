@@ -1,0 +1,107 @@
+/*----------- MOBILE ------------*/
+@media (max-width: 576px) {
+
+    .wallpaper-box img {
+        width: 295px;
+    }
+
+    .btn-vermais {
+        width: 104px;
+        height: 35px;
+        margin-left: 20px;
+        border-radius: 20px;
+        font-size: 16px;
+    }
+    h5 {
+        font-size: 1.8rem;
+    }
+    .count-text {
+        font-size: 1.8rem;
+    }
+
+    .video-card {
+       max-width: 320px;
+    }
+    .video-card img {
+        width: 320px;
+    }
+}
+
+/*----------- TABLET ------------*/
+@media (max-width: 992px) {
+    .navbar-collapse {
+        width:100%;
+        position: absolute;
+        top: 100%;
+        background-color: var(--azul-102c57);
+        left: 0;
+    }
+    .navbar-collapse .navbar-nav {
+        text-align: center;
+        background-color: var(--azul-102c57);
+    }
+    .navbar-collapse .nav-item {
+        padding: 0.5rem 0;
+    }
+
+    .capa {
+        display: flex;
+        justify-content: center;
+    }
+    .imagemCapa {
+        max-width: 400px;
+        max-height: 600px;
+    }
+    .informacoes {
+        padding-top: 30px;
+    }
+    .titulo-container {
+        justify-content: center;
+    }
+
+    .video-container {
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .video-container::-webkit-scrollbar {
+        display: none;
+    }
+    .video-card {
+        flex: 0 0 80%;
+        max-width: 366.66px;
+        overflow: hidden;
+    }
+
+    .poster-container {
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    .poster-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .wallpapers-container {
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    .wallpapers-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .rec-container {
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    .rec-container::-webkit-scrollbar {
+        display: none;
+    }
+}
