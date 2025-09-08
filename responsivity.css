@@ -72,6 +72,7 @@
     .video-card {
         flex: 0 0 80%;
         max-width: 366.66px;
+        overflow: hidden;
     }
 
     .poster-container {
