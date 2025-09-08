@@ -11,58 +11,63 @@
     </head>
     <body>
         <div class="azul-background">
-             <nav class="menu-bar navbar navbar-expand-lg container-sm">
+             <nav class="menu-bar navbar navbar-expand-lg container px-0">
                 <img src="imgs/logo-clara.png">
-                <div class="menu-navegacao">
-                    <ul>
-                        <li><a href="#">Filmes</a></li>
-                        <li><a href="#">Séries</a></li>
+
+                <button class="toggler">☰</button>
+
+                <div id="menu-navegacao" class="collapse navbar-collapse menu-navegacao">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" href="#">Filmes</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Séries</a></li>
                     </ul>
                 </div>
             </nav>
         </div>
         <div class="bege-claro-background"><!--POSTER DO FILME-->
-            <section class="filme container-sm row-cols-2">
-                <div class="capa col-md-4"><img id="poster" class="imagemCapa" src=" " alt=" ">
-                </div>    
-                <div class="informacoes col-md-8"><!--CAMPO DE INFORMAÇÕES GERAIS DO FILME-->
-                    <div class="titulo-container">
-                        <h1 id="title"></h1>
-                        <h2>(<span id="year-released"></span>)</h2>
-                    </div>
-                    <div>
-                        <h3>Gênero:</h3>
-                        <p id="genres"></p>
-                    </div>
-                    <div>
-                        <h3>Sinopse:</h3>
-                        <p id="overview" class="text-justify"></p>
-                    </div>
-                    <div class="subInformacoes">
-                        <div class="row row-cols-2">
-                            <div class="col">
-                                <h3>Dirigido por:</h3>
-                                <p id="director"></p>
-                            </div>
-                            <div class="col">
-                                <h3>Escrito por:</h3>
-                                <p id="writer"></p>
-                            </div>
-                            <div class="col">
-                                <h3>Situação:</h3>
-                                <p id="status"></p>
-                            </div>
-                            <div class="col">
-                                <h3>Idioma original:</h3>
-                                <p id="language"></p>
-                            </div>
-                            <div class="col">
-                                <h3>Orçamento:</h3>
-                                <p id="budget"></p>
-                            </div>
-                            <div class="col">
-                                <h3>Receita:</h3>
-                                <p id="revenue"></p>
+            <section class="container px-0 py-5">
+                <div class="row">
+                    <div class="capa col-sm-12 col-md-12 col-lg-4"><img id="poster" class="imagemCapa" src=" " alt=" "></div>    
+
+                    <div class="informacoes col-sm-12 col-md-12 col-lg-8"><!--CAMPO DE INFORMAÇÕES GERAIS DO FILME-->
+                        <div class="titulo-container">
+                            <h1 id="title"></h1>
+                            <h2>(<span id="year-released"></span>)</h2>
+                        </div>
+                        <div>
+                            <h3>Gênero:</h3>
+                            <p id="genres"></p>
+                        </div>
+                        <div>
+                            <h3>Sinopse:</h3>
+                            <p id="overview" class="text-justify"></p>
+                        </div>
+                        <div class="subInformacoes">
+                            <div class="row row-cols-2">
+                                <div class="col">
+                                    <h3>Dirigido por:</h3>
+                                    <p id="director"></p>
+                                </div>
+                                <div class="col">
+                                    <h3>Escrito por:</h3>
+                                    <p id="writer"></p>
+                                </div>
+                                <div class="col">
+                                    <h3>Situação:</h3>
+                                    <p id="status"></p>
+                                </div>
+                                <div class="col">
+                                    <h3>Idioma original:</h3>
+                                    <p id="language"></p>
+                                </div>
+                                <div class="col">
+                                    <h3>Orçamento:</h3>
+                                    <p id="budget"></p>
+                                </div>
+                                <div class="col">
+                                    <h3>Receita:</h3>
+                                    <p id="revenue"></p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -70,10 +75,8 @@
             </section>
         </div>
         
-
-
         <div class="bege-medio-background">
-            <section id="elenco" class="container-sm">
+            <section id="elenco" class="container px-0">
                 <div class="subtitulos">
                     <h4>Elenco</h4><button id="btn-elenco" type="button" class="btn btn-vermais">Ver mais</button>
                 </div>
@@ -93,15 +96,15 @@
         </div>
             
         <div class="bege-claro-background">
-            <section id="resenhas" class="container-sm">
+            <section id="resenhas" class="container px-0">
                 <div class="subtitulos">
                     <h4>Resenhas</h4><button id="btn-resenhas" type="button" class="btn btn-vermais">Ver mais</button>
                 </div>
 
-                <div id="reviews-container" class="reviews-container"></div>
+                <div id="reviews-container" class="row"></div>
             </section>
 
-            <section class="container-sm">
+            <section class="container px-0">
                 <div id="midia" class="subtitulos">
                     <h4>Mídia</h4>
                 </div>
@@ -133,7 +136,7 @@
         </div>
 
         <div class="azul-background">
-            <section id="recomendacoes" class="container-sm">
+            <section id="recomendacoes" class="container px-0">
                 <div class="subtitulo-rec">
                     <h4>Recomendações</h4>
                 </div>
@@ -144,36 +147,28 @@
 
         <div class="bege-claro-background footer-wrapper">
 
-            <footer id="rodape" class="container-sm">
+            <footer id="rodape" class="container px-0">
 
                 <div class="row">
 
-                    <div class="col-md-3">
+                    <div class="col-12 col-lg-3">
                         <img src="imgs/logo-escura.png" alt="Logo" class="img-fluid">
                     </div>
 
-                    <div class="col-md-3">
-                        <ul>
-                            <li><a href="#">Sobre</a></li>
-                            <li><a href="#">Contato</a></li>
-                            <li><a href="#">Suporte</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-md-3">
-                        <ul>
-                            <li><a href="#">Adicione um Filme</a></li>
-                            <li><a href="#">Adicione uma Série</a></li>
-                            <li><a href="#">Discussões</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-md-3">
-                        <ul>
-                            <li><a href="#">Termos de Uso</a></li>
-                            <li><a href="#">Política de Privacidade</a></li>
-                            <li><a href="#">Diretrizes</a></li>
-                        </ul>
+                    <div class="col-12 col-lg-9">
+                        <div class="row">
+                            <ul class="list-unstyled d-flex flex-wrap w-100">
+                                <li class="col-12 col-md-6 col-lg-4"><a href="#">Sobre</a></li>
+                                <li class="col-12 col-md-6 col-lg-4"><a href="#">Contato</a></li>
+                                <li class="col-12 col-md-6 col-lg-4"><a href="#">Suporte</a></li>
+                                <li class="col-12 col-md-6 col-lg-4"><a href="#">Adicione um Filme</a></li>
+                                <li class="col-12 col-md-6 col-lg-4"><a href="#">Adicione uma Série</a></li>
+                                <li class="col-12 col-md-6 col-lg-4"><a href="#">Discussões</a></li>
+                                <li class="col-12 col-md-6 col-lg-4"><a href="#">Termos de Uso</a></li>
+                                <li class="col-12 col-md-6 col-lg-4"><a href="#">Política de Privacidade</a></li>
+                                <li class="col-12 col-md-6 col-lg-4"><a href="#">Diretrizes</a></li>
+                            </ul>
+                        </div>
                     </div>
                     
                 </div>
