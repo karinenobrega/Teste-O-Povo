@@ -1,10 +1,31 @@
-/*----------- MOBILE (ATÉ 376px) ------------*/
-@media (max-width: 376px) {
+/*----------- MOBILE ------------*/
+@media (max-width: 576px) {
 
+    .wallpaper-box img {
+        width: 295px;
+    }
+
+    .btn-vermais {
+        width: 104px;
+        height: 35px;
+        margin-left: 20px;
+        border-radius: 20px;
+        font-size: 16px;
+    }
+    h5 {
+        font-size: 1.8rem;
+    }
+    .count-text {
+        font-size: 1.8rem;
+    }
+
+    .video-card img {
+        width: 320px;
+    }
 }
 
-/*----------- TABLET (ATÉ 768px) ------------*/
-@media (max-width: 1024px) {
+/*----------- TABLET ------------*/
+@media (max-width: 992px) {
     .navbar-collapse {
         width:100%;
         position: absolute;
@@ -33,5 +54,50 @@
     }
     .titulo-container {
         justify-content: center;
+    }
+
+    .video-container {
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .video-container::-webkit-scrollbar {
+        display: none;
+    }
+    .video-card {
+        flex: 0 0 80%;
+        max-width: 366.66px;
+    }
+
+    .poster-container {
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    .poster-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .wallpapers-container {
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    .wallpapers-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .rec-container {
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    .rec-container::-webkit-scrollbar {
+        display: none;
     }
 }

@@ -220,7 +220,7 @@ fetch(url, options)
 
                 videoCard.dataset.videoKey = video.key;
 
-                videoCard.innerHTML = `<img src="https://img.youtube.com/vi/${video.key}/mqdefault.jpg" alt="${video.name}" style="width: 366.66px; object-fit: cover; border-radius: 10px;">`;
+                videoCard.innerHTML = `<img src="https://img.youtube.com/vi/${video.key}/mqdefault.jpg" alt="${video.name}" style="object-fit: cover; border-radius: 10px;">`;
 
                 videoCard.addEventListener('click', function() {
                     const key = this.dataset.videoKey;
